@@ -2,12 +2,11 @@ class CreateChoices < ActiveRecord::Migration
   def change
     create_table :choices do |t|
     	t.string :name
-    	
-    	
     	t.integer :vote
-    	t.references :poll
+      #t.references :choice_id
+    	t.references :poll_id
 
-      t.timestamps null: false
+      t.timestamps 
     end
   end
 end

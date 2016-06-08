@@ -1,15 +1,14 @@
-<%= form_for @poll , method: :post, url: poll_vote_path do |f| %>
-	<b>Poll : </b><%= @poll.name %><br>
 
-	<% @poll.choices.each do |choice|%>
+<%= form_for @poll,method: :post ,url: poll_vote_path  do |f| %>
+ <h3>Poll : <%= @poll.name %><br></h3>
 
-    <%= radio_button_tag(:radio, "1") %>
+    <% @poll.choices.each do |choice|%>
+    <%= radio_button_tag(:radio, choice.id) %>
     <%= label_tag(:tag, choice.name) %><br>
-    
+
     <% end %>
 
-  	 <br><%= f.submit 'Vote' %>
-
+ <%= f.submit "Vote" %>
 <% end %>
 
 

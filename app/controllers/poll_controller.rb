@@ -33,6 +33,7 @@ class PollController < ApplicationController
 
 	def show
 		@poll = Poll.find(params[:id])
+		@choices = @poll.choices
 	end
 
 	#def show
@@ -53,7 +54,7 @@ class PollController < ApplicationController
 	#end
 
 	def vote
-		raise :test
+		#raise :test
   		@poll = Poll.new(choice_params)
 		
   	
@@ -104,3 +105,5 @@ class PollController < ApplicationController
 
 
 end
+
+
