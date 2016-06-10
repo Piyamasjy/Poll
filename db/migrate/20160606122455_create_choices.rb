@@ -6,7 +6,7 @@ class CreateChoices < ActiveRecord::Migration
       #t.references :choice_id
     	t.references :poll
 
-      t.timestamps 
+      t.timestamps null: false
     end
   end
 end
