@@ -1,6 +1,7 @@
 
 <%= form_for @poll,method: :post ,url: poll_vote_path  do |f| %>
  <h3>Poll : <%= @poll.name %><br></h3>
+ <%= hidden_field_tag :id, @poll.id %>
 
     <% @poll.choices.each do |choice|%>
     <%= radio_button_tag(:radio, choice.id) %>

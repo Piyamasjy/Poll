@@ -54,8 +54,11 @@ class PollController < ApplicationController
 	#end
 
 	def vote
-		#raise :test
-  		@poll = Poll.new(choice_params)
+		puts 'xxxxxxx' + params.to_s
+  	
+  		@poll = Poll.find(params[:id])
+  		@poll.selected_choice_id = params[:radio] 
+#assign value
 		
   	
 		if @poll.save
@@ -87,22 +90,24 @@ class PollController < ApplicationController
 		end
 	end
 
+	def show_vote
+		@poll = Poll.find(params[:id])
+	end
+
+
 	private
 
   	def poll_params
     	params.require(:poll).permit(:name, choices_attributes: [:name])
   	end
 
-  	def choice_params
-    	params.require(:choice).permit(:name, choices_attributes: [:name])
-  	end
+  	# def choice_params
+   #  	params.require(:choice).permit(:name, choices_attributes: [:name])
+  	# end
 
   	
 
-  	def show_vote
-		@poll = Poll.find(params[:id])
-	end
-
+  	
 
 end
 
