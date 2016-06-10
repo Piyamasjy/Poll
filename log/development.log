@@ -21963,3 +21963,17 @@ Processing by PollController#show_vote as HTML
   [1m[35mChoice Load (0.2ms)[0m  SELECT  "choices".* FROM "choices" WHERE "choices"."id" = ? LIMIT 1  [["id", 141]]
   Rendered poll/show_vote.html.erb within layouts/application (2.6ms)
 Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/poll/index" for 127.0.0.1 at 2016-06-10 11:20:44 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PollController#index as HTML
+  Rendered poll/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 547ms (Views: 500.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/poll/new?utf8=%E2%9C%93&commit=Create+Poll" for 127.0.0.1 at 2016-06-10 11:20:45 +0700
+Processing by PollController#new as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Create Poll"}
+  Rendered poll/new.html.erb within layouts/application (110.0ms)
+Completed 200 OK in 261ms (Views: 164.8ms | ActiveRecord: 0.3ms)

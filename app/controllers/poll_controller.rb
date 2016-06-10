@@ -1,8 +1,5 @@
 class PollController < ApplicationController
-	def create
-		@poll = Poll.new		
-		
-	end
+	
 
 	def index
 		@poll = Poll.new		
@@ -73,6 +70,7 @@ class PollController < ApplicationController
 
 		@poll = Poll.new(poll_params)
 		
+
   		#4.times { @poll.choice.build }
   		#puts params.to_h
 		#poll = Poll.new(name: params[:poll][:name])
